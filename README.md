@@ -59,6 +59,17 @@ A API é documentada automaticamente com Swagger. Após iniciar a aplicação, a
 
 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
+<img width="1812" height="1019" alt="Captura de tela 2025-10-18 163439" src="https://github.com/user-attachments/assets/0a834864-c5da-4d5e-a92e-64aef9199874" />
+
+
+## 📮 Outra Ferramentas de Teste
+
+A API foi testada com as seguintes ferramentas:
+
+- 📮 [Postman](https://www.postman.com)
+
+
+-------------------------
 ### Exemplos de Requisições
 
 #### 1. Criar um Usuário e seu Perfil
