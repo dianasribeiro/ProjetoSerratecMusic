@@ -78,14 +78,19 @@ A API foi testada com a seguinte ferramenta:
 ```http
 POST /usuarios
 {
-  "nome": "João da Silva",
-  "email": "joao.silva@email.com",
+  "nome": "Manuel",
+  "email": "Manu@email.com",
   "perfil": {
-    "telefone": "21999998888",
-    "dataNascimento": "1990-05-15"
+    "telefone": "11999957462",
+    "dataNascimento": "1995-12-15"
   }
 }
 ```
+
+Exemplo de como ficaria depois de criada
+
+<img width="1373" height="877" alt="Captura de tela 2025-10-18 165139" src="https://github.com/user-attachments/assets/217c1e74-7a01-4d57-ab3e-2f824ca76166" />
+
 #### 2. Criar uma Música com Artistas existentes
 ```http
 POST /musicas
@@ -105,25 +110,33 @@ POST /musicas
 POST /playlists
 
 {
-  "nome": "Minhas Favoritas de Rock",
-  "descricao": "O melhor do rock clássico",
+  "nome": "Glamurosa",
+  "descricao": "Lançada nos anos 90,'Glamurosa' é um marco do Funk Melody, um estilo mais romântico, melódico e com batidas mais suaves",
   "usuario": {
-    "id": 1
+    "id": 6
   }
 }
 ```
+<img width="1367" height="693" alt="Captura de tela 2025-10-18 164618" src="https://github.com/user-attachments/assets/12a8356a-7ea3-4e9a-aceb-f77163ea9ce8" />
+
 #### 4. Atualizar as Músicas de uma Playlist
 ```http
 PUT /playlists/{id}
 {
-  "nome": "Rock e Pop Atualizado",
-  "descricao": "Uma mistura do bom",
-  "musicas": [
-    { "id": 3 },
-    { "id": 5 }
-  ]
+   {
+    "id": 3,
+    "nome": "Viva La Vida",
+    "descricao": "Conhecida pelo seu arranjo orquestral e refrão que se tornou um hino.",
+    "musicas": [
+      {"id": 3}
+      {"id": 1}
+    ]
+  }
 }
 ```
+
+<img width="1376" height="797" alt="Captura de tela 2025-10-18 164715" src="https://github.com/user-attachments/assets/d94122f0-45cc-4470-93d7-f80465065b9f" />
+
 ## ⚙️ Como Executar o Projeto
 
 # Pré-requisitos
