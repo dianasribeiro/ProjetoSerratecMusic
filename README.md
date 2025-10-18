@@ -14,6 +14,7 @@ API RESTful desenvolvida como parte de um projeto de avaliação, simulando o ba
   - `OneToOne` → `Usuario <-> Perfil`
   - `OneToMany` → `Usuario <-> Playlist`
   - `ManyToMany` → `Musica <-> Artista` e `Playlist <-> Musica`
+  - 
 - **Validação de Dados**: Uso de Bean Validation para garantir a integridade dos dados recebidos.
 - **Tratamento de Exceções**: `ControllerAdvice` para um tratamento de erros centralizado e padronizado.
 - **Documentação Automática**: Geração de documentação interativa da API com Springdoc OpenAPI (Swagger).
@@ -28,7 +29,7 @@ API RESTful desenvolvida como parte de um projeto de avaliação, simulando o ba
 - PostgreSQL
 - Maven
 - Springdoc OpenAPI (Swagger)
-
+- Postman
 ---
 
 ## 🏛️ Arquitetura do Projeto
@@ -64,7 +65,7 @@ A API é documentada automaticamente com Swagger. Após iniciar a aplicação, a
 
 ## 📮 Outra Ferramentas de Teste
 
-A API foi testada com as seguintes ferramentas:
+A API foi testada com a seguinte ferramenta:
 
 - 📮 [Postman](https://www.postman.com)
 
@@ -133,20 +134,21 @@ PUT /playlists/{id}
 
 
 # 1- Clone o repositório:
+```
 Bash
 git clone https://github.com/seu-usuario/serratec-music-api.git
 cd serratec-music-api
-
+```
 
 # 2- Configure o Banco de Dados:
   *Crie um banco de dados no PostgreSQL chamado serratec_music.
   *Edite o arquivo src/main/resources/application.properties com suas credenciais:
-
+```
 Properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/serratec_music
 spring.datasource.username=seu_usuario_postgres
 spring.datasource.password=sua_senha_postgres
-
+```
 
 # 3-Execute a aplicação:
 ```
