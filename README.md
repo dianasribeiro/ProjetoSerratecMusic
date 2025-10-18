@@ -44,9 +44,12 @@ com.serratec.musicapi
 
 ---
 
-## 🗂️ Modelo de Dados (Relacionamentos)
+## 📊 Diagrama do Banco de Dados
 
-O diagrama abaixo ilustra os relacionamentos entre as principais entidades da API.
+Diagrama ilustrativo da estrutura relacional implementada em PostgreSQL.
+
+<img width="889" height="627" alt="Captura de tela 2025-10-18 154559" src="https://github.com/user-attachments/assets/f9ec191b-41d1-4581-9cb1-fd684d45c010" />
+
 
 ---
 
@@ -70,8 +73,9 @@ POST /usuarios
     "dataNascimento": "1990-05-15"
   }
 }
-
+```
 #### 2. Criar uma Música com Artistas existentes
+```http
 POST /musicas
 
 {
@@ -83,8 +87,9 @@ POST /musicas
     { "id": 2 }
   ]
 }
-
+```
 #### 3.  Criar uma Playlist para um Usuário
+```http
 POST /playlists
 
 {
@@ -94,8 +99,9 @@ POST /playlists
     "id": 1
   }
 }
-
+```
 #### 4. Atualizar as Músicas de uma Playlist
+```http
 PUT /playlists/{id}
 {
   "nome": "Rock e Pop Atualizado",
@@ -105,7 +111,7 @@ PUT /playlists/{id}
     { "id": 5 }
   ]
 }
-
+```
 ## ⚙️ Como Executar o Projeto
 
 # Pré-requisitos
@@ -114,134 +120,6 @@ PUT /playlists/{id}
 - PostgreSQL instalado e em execução
 - Cliente de API como Postman ou Insomnia (opcional)
 
-## Passos
-- Clone o repositório:
-Claro, Diana! Aqui está o conteúdo formatado em Markdown (.md) para você usar como README no GitHub:
-# Serratec Music API 🎵
-
-API RESTful desenvolvida como parte de um projeto de avaliação, simulando o back-end de uma plataforma de streaming de música, a **Serratec Music**. A API gerencia usuários, artistas, músicas e playlists, implementando conceitos essenciais de desenvolvimento back-end com o ecossistema Spring.
-
----
-
-## 🚀 Funcionalidades Principais
-
-- **CRUDs Completos**: Gerenciamento total de Artistas, Músicas, Usuários e Playlists.
-- **Relacionamentos Complexos**: Implementação correta de relacionamentos JPA:
-  - `OneToOne` → `Usuario <-> Perfil`
-  - `OneToMany` → `Usuario <-> Playlist`
-  - `ManyToMany` → `Musica <-> Artista` e `Playlist <-> Musica`
-- **Validação de Dados**: Uso de Bean Validation para garantir a integridade dos dados recebidos.
-- **Tratamento de Exceções**: `ControllerAdvice` para um tratamento de erros centralizado e padronizado.
-- **Documentação Automática**: Geração de documentação interativa da API com Springdoc OpenAPI (Swagger).
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- Java 17
-- Spring Boot 3
-- Spring Data JPA (Hibernate)
-- PostgreSQL
-- Maven
-- Springdoc OpenAPI (Swagger)
-
----
-
-## 🏛️ Arquitetura do Projeto
-
-O projeto segue uma arquitetura em camadas para organizar as responsabilidades:
-
-
-com.serratec.musicapi ├── controller   → Camada de API, responsável por expor os endpoints REST. ├── domain       → Entidades de domínio (modelos) que representam as tabelas do banco de dados. ├── exception    → Classes para tratamento de exceções globais. └── repository   → Camada de acesso a dados, responsável pela comunicação com o banco via Spring Data JPA.
-
----
-
-## 🗂️ Modelo de Dados (Relacionamentos)
-
-<img width="1024" height="1024" alt="Gemini_Generated_Image_732f2c732f2c732f" src="https://github.com/user-attachments/assets/b35a0b31-f765-4291-87f1-2684af4c4c91" />
-
-O diagrama abaixo ilustra os relacionamentos entre as principais entidades da API.
-
----
-
-## 📚 Documentação dos Endpoints
-
-A API é documentada automaticamente com Swagger. Após iniciar a aplicação, acesse:
-
-[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
-### Exemplos de Requisições
-
-#### 1. Criar um Usuário e seu Perfil
-
-```http
-POST /usuarios
-
-
-{
-  "nome": "João da Silva",
-  "email": "joao.silva@email.com",
-  "perfil": {
-    "telefone": "21999998888",
-    "dataNascimento": "1990-05-15"
-  }
-}
-
- 2. Criar uma Música com Artistas existentes
-
-```http
-POST /musicas
-
-
-{
-  "titulo": "Bohemian Rhapsody",
-  "minutos": 6,
-  "genero": "ROCK",
-  "artistas": [
-    { "id": 1 },
-    { "id": 2 }
-  ]
-}
-
-
-3. Criar uma Playlist para um Usuário
-POST /playlists
-
-
-{
-  "nome": "Minhas Favoritas de Rock",
-  "descricao": "O melhor do rock clássico",
-  "usuario": {
-    "id": 1
-  }
-}
-
-
-4. Atualizar as Músicas de uma Playlist
-PUT /playlists/{id}
-
-
-{
-  "nome": "Rock e Pop Atualizado",
-  "descricao": "Uma mistura do bom",
-  "musicas": [
-    { "id": 3 },
-    { "id": 5 }
-  ]
-}
-
-
-
-
-
-⚙️ Como Executar o Projeto
-Pré-requisitos
-- Java JDK 17 ou superior
-- Apache Maven 3.8 ou superior
-- PostgreSQL instalado e em execução
-- Cliente de API como Postman ou Insomnia (opcional)
-
-## Passos
 
 # 1- Clone o repositório:
 Bash
@@ -260,18 +138,25 @@ spring.datasource.password=sua_senha_postgres
 
 
 # 3-Execute a aplicação:
+```
 Bash
 mvn spring-boot:run
 
-
+```
 # 4- Acesse a API:
 - http://localhost:8080
 - http://localhost:8080/swagger-ui.html
 
-👨‍💻 Autor
-Feito com ❤️ por [Seu Nome Aqui]
 
-Se quiser, posso te ajudar a personalizar o nome do autor ou adicionar um diagrama de entidades em imagem. É só pedir!
+---
 
-
+## 👨‍💻 Autor
+
+✨ **Diana Souza Ribeiro**  
+🎓 Residente do Serratec 2025.2  
+💻 Desenvolvedora Full Stack
+
+---
+
+
 
